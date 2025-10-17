@@ -147,34 +147,34 @@ const Index = () => {
             ))}
           </div>
 
-          <div className="flex gap-6 justify-center mt-16">
+          <div className="flex gap-4 justify-center mt-16">
             <Link to="/gallery">
               <Button 
-                size="lg"
-                className="neomorph-hover rounded-2xl px-8 py-6 bg-gradient-to-br from-primary/90 to-primary transition-all duration-300 hover:scale-105"
+                size="default"
+                className="neomorph-hover rounded-xl px-6 py-3 bg-gradient-to-br from-primary/90 to-primary transition-all duration-300 hover:scale-105"
               >
-                <Icon name="Grid3x3" size={24} className="mr-2" />
-                <span className="text-lg font-semibold">Галерея</span>
+                <Icon name="ShoppingBag" size={18} className="mr-2" />
+                <span className="font-semibold">Магазин</span>
               </Button>
             </Link>
 
             <Link to="/profile">
               <Button 
-                size="lg"
-                className="neomorph-hover rounded-2xl px-8 py-6 bg-gradient-to-br from-accent/90 to-accent transition-all duration-300 hover:scale-105"
+                size="default"
+                className="neomorph-hover rounded-xl px-6 py-3 bg-gradient-to-br from-accent/90 to-accent transition-all duration-300 hover:scale-105"
               >
-                <Icon name="User" size={24} className="mr-2" />
-                <span className="text-lg font-semibold">Профиль</span>
+                <Icon name="UserPlus" size={18} className="mr-2" />
+                <span className="font-semibold">Создать персонажа</span>
               </Button>
             </Link>
 
             <Link to="/pricing">
               <Button 
-                size="lg"
-                className="neomorph-hover rounded-2xl px-8 py-6 bg-gradient-to-br from-primary/90 to-primary transition-all duration-300 hover:scale-105"
+                size="default"
+                className="neomorph-hover rounded-xl px-6 py-3 bg-gradient-to-br from-primary/90 to-primary transition-all duration-300 hover:scale-105"
               >
-                <Icon name="CreditCard" size={24} className="mr-2" />
-                <span className="text-lg font-semibold">Тарифы</span>
+                <Icon name="CreditCard" size={18} className="mr-2" />
+                <span className="font-semibold">Тарифы</span>
               </Button>
             </Link>
           </div>
