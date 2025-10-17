@@ -7,11 +7,23 @@ import Icon from '@/components/ui/icon';
 const Index = () => {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   const [clickedIndex, setClickedIndex] = useState<number | null>(null);
+  const [selectedStyle, setSelectedStyle] = useState<'realistic' | 'anime' | null>(null);
+  const [selectedGender, setSelectedGender] = useState<'male' | 'female' | null>(null);
   
   const imageSlots = Array(6).fill(null);
 
   const handleClick = (index: number) => {
     setClickedIndex(clickedIndex === index ? null : index);
+  };
+
+  const handleStyleClick = (style: 'realistic' | 'anime') => {
+    if (selectedStyle === style) {
+      setSelectedStyle(null);
+      setSelectedGender(null);
+    } else {
+      setSelectedStyle(style);
+      setSelectedGender(null);
+    }
   };
 
   return (
@@ -31,6 +43,68 @@ const Index = () => {
 
       <section className="py-20 px-4">
         <div className="max-w-4xl mx-auto">
+          <div className="grid grid-cols-2 gap-6 mb-12">
+            <Card
+              className={`neomorph-hover rounded-3xl border-0 bg-card cursor-pointer transition-all duration-300 p-6 ${
+                selectedStyle === 'realistic' ? 'ring-4 ring-primary scale-105' : ''
+              }`}
+              onClick={() => handleStyleClick('realistic')}
+            >
+              <div className="flex items-center justify-center gap-3">
+                <Icon name="User" size={32} className={selectedStyle === 'realistic' ? 'text-primary' : 'text-muted-foreground'} />
+                <h3 className="text-2xl font-bold">Реальный</h3>
+              </div>
+            </Card>
+
+            <Card
+              className={`neomorph-hover rounded-3xl border-0 bg-card cursor-pointer transition-all duration-300 p-6 ${
+                selectedStyle === 'anime' ? 'ring-4 ring-primary scale-105' : ''
+              }`}
+              onClick={() => handleStyleClick('anime')}
+            >
+              <div className="flex items-center justify-center gap-3">
+                <Icon name="Sparkles" size={32} className={selectedStyle === 'anime' ? 'text-primary' : 'text-muted-foreground'} />
+                <h3 className="text-2xl font-bold">Аниме</h3>
+              </div>
+            </Card>
+          </div>
+
+          {selectedStyle && (
+            <div className="animate-fade-in mb-12">
+              <div className="grid grid-cols-2 gap-6">
+                <Card
+                  className={`neomorph-hover rounded-3xl border-0 bg-gradient-to-br from-primary/10 to-accent/10 cursor-pointer transition-all duration-300 p-8 ${
+                    selectedGender === 'male' ? 'ring-4 ring-primary scale-105' : ''
+                  }`}
+                  onClick={() => setSelectedGender(selectedGender === 'male' ? null : 'male')}
+                >
+                  <div className="flex flex-col items-center gap-4">
+                    <Icon name="User" size={48} className={selectedGender === 'male' ? 'text-primary' : 'text-foreground'} />
+                    <h4 className="text-xl font-semibold">Мужчина</h4>
+                    {selectedGender === 'male' && (
+                      <Icon name="CheckCircle" size={24} className="text-primary animate-fade-in" />
+                    )}
+                  </div>
+                </Card>
+
+                <Card
+                  className={`neomorph-hover rounded-3xl border-0 bg-gradient-to-br from-primary/10 to-accent/10 cursor-pointer transition-all duration-300 p-8 ${
+                    selectedGender === 'female' ? 'ring-4 ring-primary scale-105' : ''
+                  }`}
+                  onClick={() => setSelectedGender(selectedGender === 'female' ? null : 'female')}
+                >
+                  <div className="flex flex-col items-center gap-4">
+                    <Icon name="UserRound" size={48} className={selectedGender === 'female' ? 'text-primary' : 'text-foreground'} />
+                    <h4 className="text-xl font-semibold">Женщина</h4>
+                    {selectedGender === 'female' && (
+                      <Icon name="CheckCircle" size={24} className="text-primary animate-fade-in" />
+                    )}
+                  </div>
+                </Card>
+              </div>
+            </div>
+          )}
+
           <div className="grid grid-cols-2 gap-6">
             {imageSlots.map((_, index) => (
               <Card 
