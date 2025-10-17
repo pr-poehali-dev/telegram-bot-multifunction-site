@@ -28,7 +28,7 @@ const Register = () => {
       return;
     }
 
-    navigate('/profile');
+    navigate('/login');
   };
 
   return (
