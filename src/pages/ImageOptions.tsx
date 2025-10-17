@@ -72,11 +72,14 @@ const ImageOptions = () => {
             {options.map((option) => (
               <Card
                 key={option.id}
-                className="neomorph-hover rounded-3xl border-0 bg-card overflow-hidden cursor-pointer transition-all duration-300 hover:scale-110"
+                className="neomorph-hover rounded-3xl border-0 bg-card overflow-hidden cursor-pointer transition-all duration-300 hover:scale-105"
                 onClick={() => {}}
               >
-                <div className={`aspect-square bg-gradient-to-br ${option.color} flex items-center justify-center`}>
-                  <Icon name={option.icon as any} size={64} className="text-white" />
+                <div className="relative">
+                  <div className={`aspect-square bg-gradient-to-br ${option.color}`}></div>
+                  <div className="absolute bottom-0 left-0 right-0 bg-background/80 backdrop-blur-sm p-3">
+                    <p className="text-xs text-center font-medium">{option.title}</p>
+                  </div>
                 </div>
               </Card>
             ))}
