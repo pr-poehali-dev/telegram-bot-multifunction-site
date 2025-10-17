@@ -35,14 +35,18 @@ const Index = () => {
       <div className="neomorph-inset bg-gradient-to-r from-primary/30 to-accent/30 py-3 px-4 sticky top-0 z-50 backdrop-blur-lg">
         <div className="flex items-center justify-between max-w-7xl mx-auto">
           <div className="flex items-center gap-3">
-            <Button size="sm" variant="secondary" className="rounded-full px-4 py-2">
-              <Icon name="LogIn" size={14} className="mr-1" />
-              <span className="text-xs font-semibold">Вход</span>
-            </Button>
-            <Button size="sm" variant="secondary" className="rounded-full px-4 py-2">
-              <Icon name="UserPlus" size={14} className="mr-1" />
-              <span className="text-xs font-semibold">Регистрация</span>
-            </Button>
+            <Link to="/login">
+              <Button size="sm" variant="secondary" className="rounded-full px-4 py-2">
+                <Icon name="LogIn" size={14} className="mr-1" />
+                <span className="text-xs font-semibold">Вход</span>
+              </Button>
+            </Link>
+            <Link to="/register">
+              <Button size="sm" variant="secondary" className="rounded-full px-4 py-2">
+                <Icon name="UserPlus" size={14} className="mr-1" />
+                <span className="text-xs font-semibold">Регистрация</span>
+              </Button>
+            </Link>
           </div>
 
           <div className="flex items-center gap-2">
