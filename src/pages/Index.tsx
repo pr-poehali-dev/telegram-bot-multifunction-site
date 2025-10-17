@@ -103,10 +103,7 @@ const Index = () => {
                 <Icon name="Send" size={20} className="mr-2" />
                 Попробовать бесплатно
               </Button>
-              <Button size="lg" variant="outline" className="neomorph text-lg px-8 py-6 rounded-3xl">
-                <Icon name="PlayCircle" size={20} className="mr-2" />
-                Смотреть демо
-              </Button>
+              <Button size="lg" variant="outline" className="neomorph text-lg px-8 py-6 rounded-3xl"></Button>
             </div>
           </div>
 
