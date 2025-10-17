@@ -47,39 +47,45 @@ const Index = () => {
 
       <section className="py-20 px-4">
         <div className="max-w-4xl mx-auto">
-          <div className="flex gap-4 mb-12 justify-center">
-            <Button
-              className={`neomorph-hover rounded-3xl px-8 py-6 transition-all duration-300 ${
-                selectedStyle === 'all' ? 'ring-4 ring-primary scale-105 bg-primary text-primary-foreground' : 'bg-card'
-              }`}
-              variant={selectedStyle === 'all' ? 'default' : 'outline'}
-              onClick={() => handleStyleClick('all')}
-            >
-              <Icon name="Grid" size={24} className="mr-2" />
-              <span className="text-lg font-semibold">Все</span>
-            </Button>
+          <div className="flex items-center gap-4 mb-12">
+            <span className="text-sm text-muted-foreground font-medium">Теги:</span>
+            
+            <div className="flex gap-3">
+              <Button
+                size="sm"
+                className={`neomorph-hover rounded-full px-5 py-2 transition-all duration-300 ${
+                  selectedStyle === 'realistic' ? 'ring-2 ring-primary scale-105 bg-primary text-primary-foreground' : 'bg-card'
+                }`}
+                variant={selectedStyle === 'realistic' ? 'default' : 'outline'}
+                onClick={() => handleStyleClick('realistic')}
+              >
+                <Icon name="User" size={16} className="mr-1" />
+                <span className="text-sm font-medium">Реальный</span>
+              </Button>
 
-            <Button
-              className={`neomorph-hover rounded-3xl px-8 py-6 transition-all duration-300 ${
-                selectedStyle === 'realistic' ? 'ring-4 ring-primary scale-105 bg-primary text-primary-foreground' : 'bg-card'
-              }`}
-              variant={selectedStyle === 'realistic' ? 'default' : 'outline'}
-              onClick={() => handleStyleClick('realistic')}
-            >
-              <Icon name="User" size={24} className="mr-2" />
-              <span className="text-lg font-semibold">Реальный</span>
-            </Button>
+              <Button
+                size="sm"
+                className={`neomorph-hover rounded-full px-5 py-2 transition-all duration-300 ${
+                  selectedStyle === 'anime' ? 'ring-2 ring-primary scale-105 bg-primary text-primary-foreground' : 'bg-card'
+                }`}
+                variant={selectedStyle === 'anime' ? 'default' : 'outline'}
+                onClick={() => handleStyleClick('anime')}
+              >
+                <Icon name="Sparkles" size={16} className="mr-1" />
+                <span className="text-sm font-medium">Аниме</span>
+              </Button>
 
-            <Button
-              className={`neomorph-hover rounded-3xl px-8 py-6 transition-all duration-300 ${
-                selectedStyle === 'anime' ? 'ring-4 ring-primary scale-105 bg-primary text-primary-foreground' : 'bg-card'
-              }`}
-              variant={selectedStyle === 'anime' ? 'default' : 'outline'}
-              onClick={() => handleStyleClick('anime')}
-            >
-              <Icon name="Sparkles" size={24} className="mr-2" />
-              <span className="text-lg font-semibold">Аниме</span>
-            </Button>
+              {selectedStyle !== 'all' && (
+                <Button
+                  size="sm"
+                  variant="ghost"
+                  className="rounded-full px-3 py-2"
+                  onClick={() => handleStyleClick('all')}
+                >
+                  <Icon name="X" size={16} />
+                </Button>
+              )}
+            </div>
           </div>
 
           <div className="grid grid-cols-2 gap-6">
