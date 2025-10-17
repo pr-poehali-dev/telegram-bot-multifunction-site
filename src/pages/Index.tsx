@@ -99,10 +99,7 @@ const Index = () => {
             </p>
             
             <div className="flex flex-wrap gap-4 justify-center">
-              <Button size="lg" className="neomorph-hover text-lg px-8 py-6 rounded-3xl bg-primary text-primary-foreground shadow-lg">
-                <Icon name="Send" size={20} className="mr-2" />
-                Попробовать бесплатно
-              </Button>
+              <Button size="lg" className="neomorph-hover text-lg px-8 py-6 rounded-3xl bg-primary text-primary-foreground shadow-lg"></Button>
               <Button size="lg" variant="outline" className="neomorph text-lg px-8 py-6 rounded-3xl"></Button>
             </div>
           </div>
