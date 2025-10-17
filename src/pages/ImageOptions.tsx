@@ -68,26 +68,15 @@ const ImageOptions = () => {
             </div>
           </Card>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-2 gap-6">
             {options.map((option) => (
               <Card
                 key={option.id}
-                className="neomorph-hover rounded-3xl border-0 bg-card overflow-hidden cursor-pointer transition-all duration-300 hover:scale-105"
+                className="neomorph-hover rounded-3xl border-0 bg-card overflow-hidden cursor-pointer transition-all duration-300 hover:scale-110"
                 onClick={() => {}}
               >
-                <div className={`p-8 bg-gradient-to-br ${option.color}`}>
-                  <div className="flex items-center gap-4 text-white">
-                    <div className="neomorph w-16 h-16 rounded-2xl flex items-center justify-center bg-white/20 backdrop-blur-sm">
-                      <Icon name={option.icon as any} size={32} />
-                    </div>
-                    
-                    <div className="flex-1">
-                      <h3 className="text-xl font-bold mb-1">{option.title}</h3>
-                      <p className="text-sm opacity-90">{option.description}</p>
-                    </div>
-
-                    <Icon name="ChevronRight" size={24} className="opacity-70" />
-                  </div>
+                <div className={`aspect-square bg-gradient-to-br ${option.color} flex items-center justify-center`}>
+                  <Icon name={option.icon as any} size={64} className="text-white" />
                 </div>
               </Card>
             ))}
