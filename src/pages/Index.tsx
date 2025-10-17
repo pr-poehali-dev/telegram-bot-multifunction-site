@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import Icon from '@/components/ui/icon';
@@ -65,6 +66,19 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <div className="neomorph-inset bg-gradient-to-r from-primary/30 to-accent/30 py-3 px-4 text-center sticky top-0 z-50 backdrop-blur-lg">
+        <p className="text-sm font-semibold flex items-center justify-center gap-2 flex-wrap">
+          <Icon name="Sparkles" size={16} className="text-primary-foreground" />
+          <span className="text-primary-foreground">Специальная акция: первый месяц со скидкой 50%!</span>
+          <Link to="/pricing">
+            <Button size="sm" variant="secondary" className="ml-2 rounded-full">
+              Подробнее
+              <Icon name="ArrowRight" size={14} className="ml-1" />
+            </Button>
+          </Link>
+        </p>
+      </div>
+
       <section className="relative overflow-hidden pt-20 pb-32 px-4">
         <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-accent/10 to-secondary/5"></div>
         
@@ -199,13 +213,12 @@ const Index = () => {
           </div>
 
           <div className="mt-12 text-center">
-            <p className="text-muted-foreground mb-4">
-              Нужно индивидуальное решение?
-            </p>
-            <Button variant="link" className="text-primary">
-              Связаться с отделом продаж
-              <Icon name="ArrowRight" size={18} className="ml-2" />
-            </Button>
+            <Link to="/pricing">
+              <Button size="lg" className="neomorph-hover rounded-2xl bg-primary text-primary-foreground">
+                Посмотреть все тарифы
+                <Icon name="ArrowRight" size={18} className="ml-2" />
+              </Button>
+            </Link>
           </div>
         </div>
       </section>
@@ -218,8 +231,11 @@ const Index = () => {
           <p className="text-muted-foreground mb-4">
             © 2024 AI Telegram Bot. Все права защищены.
           </p>
-          <div className="flex gap-6 justify-center">
+          <div className="flex gap-6 justify-center flex-wrap">
             <Button variant="ghost" size="sm">О нас</Button>
+            <Link to="/pricing">
+              <Button variant="ghost" size="sm">Тарифы</Button>
+            </Link>
             <Button variant="ghost" size="sm">Документация</Button>
             <Button variant="ghost" size="sm">Поддержка</Button>
             <Button variant="ghost" size="sm">Контакты</Button>
