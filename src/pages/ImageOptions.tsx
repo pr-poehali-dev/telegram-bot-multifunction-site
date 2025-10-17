@@ -78,7 +78,7 @@ const ImageOptions = () => {
                 <div className="relative">
                   <div className={`aspect-square bg-gradient-to-br ${option.color}`}></div>
                   <div className="absolute bottom-0 left-0 right-0 bg-background/80 backdrop-blur-sm p-3">
-                    <p className="text-xs text-center font-medium">{option.title}</p>
+                    <p className="text-xs text-center font-extralight">{option.title}</p>
                   </div>
                 </div>
               </Card>
