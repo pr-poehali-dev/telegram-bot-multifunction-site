@@ -1,10 +1,11 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import Icon from '@/components/ui/icon';
 
 const Index = () => {
+  const navigate = useNavigate();
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   const [clickedIndex, setClickedIndex] = useState<number | null>(null);
   const [selectedStyle, setSelectedStyle] = useState<'realistic' | 'anime' | 'all'>('all');
@@ -18,8 +19,8 @@ const Index = () => {
     { id: 5, type: 'anime' }
   ];
 
-  const handleClick = (index: number) => {
-    setClickedIndex(clickedIndex === index ? null : index);
+  const handleClick = (slot: { id: number; type: string }) => {
+    navigate(`/image-options?id=${slot.id + 1}&type=${slot.type}`);
   };
 
   const handleStyleClick = (style: 'realistic' | 'anime' | 'all') => {
@@ -113,7 +114,7 @@ const Index = () => {
                 className={`neomorph-hover rounded-3xl border-0 bg-card overflow-hidden group cursor-pointer transition-all duration-500 animate-fade-in ${
                   clickedIndex === slot.id ? 'ring-4 ring-primary scale-105' : ''
                 }`}
-                onClick={() => handleClick(slot.id)}
+                onClick={() => handleClick(slot)}
                 onMouseEnter={() => setHoveredIndex(slot.id)}
                 onMouseLeave={() => setHoveredIndex(null)}
                 style={{ animationDelay: `${index * 0.1}s` }}
