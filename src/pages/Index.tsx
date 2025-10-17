@@ -167,7 +167,7 @@ const Index = () => {
           </div>
 
           <div className="flex gap-6 justify-center mt-16">
-            <Link to="/gallery">
+            <Link to="/shop">
               <Button 
                 size="icon"
                 className="neomorph-hover w-20 h-20 rounded-2xl bg-gradient-to-br from-primary/90 to-primary transition-all duration-300 hover:scale-110"
