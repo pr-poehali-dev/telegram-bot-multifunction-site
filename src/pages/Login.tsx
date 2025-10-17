@@ -29,8 +29,22 @@ const Login = () => {
 
   if (step === 'complete') {
     return (
-      <div className="min-h-screen bg-background flex items-center justify-center px-4">
-        <Card className="neomorph rounded-3xl border-0 bg-card p-8 max-w-md w-full">
+      <div className="min-h-screen bg-background">
+        <header className="py-6 px-4 border-b border-border">
+          <div className="max-w-6xl mx-auto flex items-center justify-between">
+            <Link to="/">
+              <Button variant="ghost" size="lg">
+                <Icon name="ArrowLeft" size={20} className="mr-2" />
+                Назад
+              </Button>
+            </Link>
+            <h1 className="text-2xl font-bold">Завершение регистрации</h1>
+            <div className="w-24"></div>
+          </div>
+        </header>
+        
+        <div className="flex items-center justify-center px-4 py-12">
+          <Card className="neomorph rounded-3xl border-0 bg-card p-8 max-w-md w-full">
           <div className="flex flex-col items-center gap-6">
             <div className="neomorph w-24 h-24 rounded-full flex items-center justify-center bg-primary/10">
               <Icon name="UserPlus" size={48} className="text-primary" />
@@ -89,13 +103,28 @@ const Login = () => {
             </Button>
           </div>
         </Card>
+        </div>
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-background flex items-center justify-center px-4">
-      <Card className="neomorph rounded-3xl border-0 bg-card p-8 max-w-md w-full">
+    <div className="min-h-screen bg-background">
+      <header className="py-6 px-4 border-b border-border">
+        <div className="max-w-6xl mx-auto flex items-center justify-between">
+          <Link to="/">
+            <Button variant="ghost" size="lg">
+              <Icon name="ArrowLeft" size={20} className="mr-2" />
+              Назад
+            </Button>
+          </Link>
+          <h1 className="text-2xl font-bold">Вход</h1>
+          <div className="w-24"></div>
+        </div>
+      </header>
+      
+      <div className="flex items-center justify-center px-4 py-12">
+        <Card className="neomorph rounded-3xl border-0 bg-card p-8 max-w-md w-full">
         <div className="flex flex-col items-center gap-6">
           <div className="neomorph w-24 h-24 rounded-full flex items-center justify-center bg-primary/10">
             <Icon name="LogIn" size={48} className="text-primary" />
@@ -146,18 +175,9 @@ const Login = () => {
               Зарегистрироваться
             </Link>
           </div>
-
-          <Link to="/" className="w-full">
-            <Button 
-              variant="ghost"
-              size="sm"
-              className="w-full"
-            >
-              Вернуться на главную
-            </Button>
-          </Link>
         </div>
       </Card>
+      </div>
     </div>
   );
 };
