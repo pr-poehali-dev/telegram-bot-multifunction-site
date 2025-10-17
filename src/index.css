@@ -1,38 +1,40 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&family=Open+Sans:wght@300;400;500;600&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --background: 262 40% 97%;
+    --foreground: 262 15% 20%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 262 40% 96%;
+    --card-foreground: 262 15% 20%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 262 40% 97%;
+    --popover-foreground: 262 15% 20%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 262 52% 64%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 262 40% 88%;
+    --secondary-foreground: 262 15% 20%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 262 30% 94%;
+    --muted-foreground: 262 10% 45%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 262 80% 90%;
+    --accent-foreground: 262 15% 20%;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 262 20% 90%;
+    --input: 262 20% 92%;
+    --ring: 262 52% 64%;
 
-    --radius: 0.5rem;
+    --radius: 1.5rem;
 
     --sidebar-background: 0 0% 98%;
 
@@ -97,5 +99,40 @@
 
   body {
     @apply bg-background text-foreground;
+    font-family: "Open Sans", sans-serif;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "Rubik", sans-serif;
+  }
+}
+
+@layer utilities {
+  .neomorph {
+    box-shadow:
+      8px 8px 16px rgba(155, 135, 245, 0.15),
+      -8px -8px 16px rgba(255, 255, 255, 0.7);
+  }
+
+  .neomorph-inset {
+    box-shadow:
+      inset 4px 4px 8px rgba(155, 135, 245, 0.1),
+      inset -4px -4px 8px rgba(255, 255, 255, 0.5);
+  }
+
+  .neomorph-hover {
+    transition: all 0.3s ease;
+  }
+
+  .neomorph-hover:hover {
+    box-shadow:
+      12px 12px 24px rgba(155, 135, 245, 0.2),
+      -12px -12px 24px rgba(255, 255, 255, 0.8);
+    transform: translateY(-2px);
   }
 }
