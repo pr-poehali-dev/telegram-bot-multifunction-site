@@ -42,12 +42,12 @@ const Pricing = () => {
           
           <div className="flex gap-4">
             <Link to="/">
-              <Button variant="ghost" className="rounded-xl">
-                <Icon name="Home" size={18} className="mr-2" />
-                Главная
+              <Button className="neomorph-hover rounded-xl bg-primary text-primary-foreground">
+                <Icon name="ArrowLeft" size={18} className="mr-2" />
+                На главную
               </Button>
             </Link>
-            <Button className="neomorph-hover rounded-xl bg-primary text-primary-foreground">
+            <Button className="neomorph-hover rounded-xl bg-secondary text-secondary-foreground">
               <Icon name="Send" size={18} className="mr-2" />
               Начать
             </Button>
