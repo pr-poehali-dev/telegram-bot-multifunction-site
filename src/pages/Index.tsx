@@ -147,34 +147,31 @@ const Index = () => {
             ))}
           </div>
 
-          <div className="flex gap-4 justify-center mt-16">
+          <div className="flex gap-6 justify-center mt-16">
             <Link to="/gallery">
               <Button 
-                size="default"
-                className="neomorph-hover rounded-xl px-6 py-3 bg-gradient-to-br from-primary/90 to-primary transition-all duration-300 hover:scale-105"
+                size="icon"
+                className="neomorph-hover w-20 h-20 rounded-2xl bg-gradient-to-br from-primary/90 to-primary transition-all duration-300 hover:scale-110"
               >
-                <Icon name="ShoppingBag" size={18} className="mr-2" />
-                <span className="font-semibold">Магазин</span>
+                <Icon name="ShoppingCart" size={36} />
               </Button>
             </Link>
 
             <Link to="/profile">
               <Button 
-                size="default"
-                className="neomorph-hover rounded-xl px-6 py-3 bg-gradient-to-br from-accent/90 to-accent transition-all duration-300 hover:scale-105"
+                size="icon"
+                className="neomorph-hover w-20 h-20 rounded-2xl bg-gradient-to-br from-accent/90 to-accent transition-all duration-300 hover:scale-110"
               >
-                <Icon name="UserPlus" size={18} className="mr-2" />
-                <span className="font-semibold">Создать персонажа</span>
+                <Icon name="User" size={36} />
               </Button>
             </Link>
 
             <Link to="/pricing">
               <Button 
-                size="default"
-                className="neomorph-hover rounded-xl px-6 py-3 bg-gradient-to-br from-primary/90 to-primary transition-all duration-300 hover:scale-105"
+                size="icon"
+                className="neomorph-hover w-20 h-20 rounded-2xl bg-gradient-to-br from-primary/90 to-primary transition-all duration-300 hover:scale-110"
               >
-                <Icon name="CreditCard" size={18} className="mr-2" />
-                <span className="font-semibold">Тарифы</span>
+                <Icon name="DollarSign" size={36} />
               </Button>
             </Link>
           </div>
