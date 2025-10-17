@@ -33,27 +33,18 @@ const Pricing = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <nav className="border-b border-border sticky top-0 z-50 bg-background/80 backdrop-blur-lg">
-        <div className="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
-          <Link to="/" className="flex items-center gap-2 neomorph-hover px-4 py-2 rounded-2xl">
-            <Icon name="Bot" size={28} className="text-primary" />
-            <span className="font-bold text-xl">AI Bot</span>
-          </Link>
-          
-          <div className="flex gap-4">
-            <Link to="/">
-              <Button className="neomorph-hover rounded-xl bg-primary text-primary-foreground">
-                <Icon name="ArrowLeft" size={18} className="mr-2" />
-                На главную
-              </Button>
-            </Link>
-            <Button className="neomorph-hover rounded-xl bg-secondary text-secondary-foreground">
-              <Icon name="Send" size={18} className="mr-2" />
-              Начать
+      <header className="py-6 px-4 border-b border-border">
+        <div className="max-w-6xl mx-auto flex items-center justify-between">
+          <Link to="/">
+            <Button variant="ghost" size="lg">
+              <Icon name="ArrowLeft" size={20} className="mr-2" />
+              Назад
             </Button>
-          </div>
+          </Link>
+          <h1 className="text-3xl font-bold">Тарифы</h1>
+          <div className="w-24"></div>
         </div>
-      </nav>
+      </header>
 
       <section className="py-20 px-4">
         <div className="max-w-6xl mx-auto">
