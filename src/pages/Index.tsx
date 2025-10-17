@@ -1,10 +1,18 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import Icon from '@/components/ui/icon';
 
 const Index = () => {
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+  const [clickedIndex, setClickedIndex] = useState<number | null>(null);
+  
   const imageSlots = Array(6).fill(null);
+
+  const handleClick = (index: number) => {
+    setClickedIndex(clickedIndex === index ? null : index);
+  };
 
   return (
     <div className="min-h-screen bg-background">
@@ -22,16 +30,55 @@ const Index = () => {
       </div>
 
       <section className="py-20 px-4">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="max-w-4xl mx-auto">
+          <div className="grid grid-cols-2 gap-6">
             {imageSlots.map((_, index) => (
               <Card 
                 key={index}
-                className="neomorph-hover rounded-3xl border-0 bg-card overflow-hidden group cursor-pointer transition-all duration-300"
+                className={`neomorph-hover rounded-3xl border-0 bg-card overflow-hidden group cursor-pointer transition-all duration-300 ${
+                  clickedIndex === index ? 'ring-4 ring-primary scale-105' : ''
+                }`}
+                onClick={() => handleClick(index)}
+                onMouseEnter={() => setHoveredIndex(index)}
+                onMouseLeave={() => setHoveredIndex(null)}
               >
                 <div className="aspect-square bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center relative">
-                  <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-accent/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                  <Icon name="Image" size={64} className="text-muted-foreground/30 group-hover:text-primary/40 transition-colors" />
+                  <div className={`absolute inset-0 bg-gradient-to-br from-primary/10 to-accent/15 transition-opacity duration-300 ${
+                    hoveredIndex === index || clickedIndex === index ? 'opacity-100' : 'opacity-0'
+                  }`}></div>
+                  
+                  <div className="relative z-10 flex flex-col items-center gap-4">
+                    <Icon 
+                      name={clickedIndex === index ? "CheckCircle" : "Image"} 
+                      size={64} 
+                      className={`transition-all duration-300 ${
+                        clickedIndex === index 
+                          ? 'text-primary scale-110' 
+                          : hoveredIndex === index 
+                          ? 'text-primary/60 scale-110' 
+                          : 'text-muted-foreground/30'
+                      }`} 
+                    />
+                    
+                    {hoveredIndex === index && clickedIndex !== index && (
+                      <div className="animate-fade-in">
+                        <Button size="sm" className="rounded-full bg-primary text-primary-foreground">
+                          <Icon name="Plus" size={16} className="mr-1" />
+                          Добавить
+                        </Button>
+                      </div>
+                    )}
+                    
+                    {clickedIndex === index && (
+                      <div className="animate-fade-in text-center">
+                        <p className="text-primary font-semibold">Выбрано</p>
+                      </div>
+                    )}
+                  </div>
+                  
+                  <div className="absolute top-3 right-3 neomorph rounded-full w-10 h-10 flex items-center justify-center bg-background/50 backdrop-blur-sm">
+                    <span className="text-sm font-bold text-foreground">{index + 1}</span>
+                  </div>
                 </div>
               </Card>
             ))}
