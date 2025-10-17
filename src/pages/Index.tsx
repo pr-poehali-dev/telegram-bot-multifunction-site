@@ -32,17 +32,31 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <div className="neomorph-inset bg-gradient-to-r from-primary/30 to-accent/30 py-3 px-4 text-center sticky top-0 z-50 backdrop-blur-lg">
-        <p className="text-sm font-semibold flex items-center justify-center gap-2 flex-wrap">
-          <Icon name="Sparkles" size={16} className="text-primary-foreground" />
-          <span className="text-primary-foreground">Специальная акция: первый месяц со скидкой 50%!</span>
-          <Link to="/pricing">
-            <Button size="sm" variant="secondary" className="ml-2 rounded-full">
-              Подробнее
-              <Icon name="ArrowRight" size={14} className="ml-1" />
+      <div className="neomorph-inset bg-gradient-to-r from-primary/30 to-accent/30 py-3 px-4 sticky top-0 z-50 backdrop-blur-lg">
+        <div className="flex items-center justify-between max-w-7xl mx-auto">
+          <div className="flex items-center gap-3">
+            <Button size="sm" variant="secondary" className="rounded-full px-4 py-2">
+              <Icon name="LogIn" size={14} className="mr-1" />
+              <span className="text-xs font-semibold">Вход</span>
             </Button>
-          </Link>
-        </p>
+            <Button size="sm" variant="secondary" className="rounded-full px-4 py-2">
+              <Icon name="UserPlus" size={14} className="mr-1" />
+              <span className="text-xs font-semibold">Регистрация</span>
+            </Button>
+          </div>
+
+          <div className="flex items-center gap-2">
+            <Icon name="Sparkles" size={16} className="text-primary-foreground" />
+            <span className="text-sm font-semibold text-primary-foreground hidden md:inline">Специальная акция: первый месяц со скидкой 50%!</span>
+            <span className="text-xs font-semibold text-primary-foreground md:hidden">Акция -50%!</span>
+            <Link to="/pricing">
+              <Button size="sm" variant="secondary" className="ml-2 rounded-full">
+                Подробнее
+                <Icon name="ArrowRight" size={14} className="ml-1" />
+              </Button>
+            </Link>
+          </div>
+        </div>
       </div>
 
       <section className="py-20 px-4">
