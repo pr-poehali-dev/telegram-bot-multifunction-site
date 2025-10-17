@@ -47,7 +47,7 @@ const Index = () => {
 
       <section className="py-20 px-4">
         <div className="max-w-4xl mx-auto">
-          <div className="flex items-center gap-4 mb-12">
+          <div className="flex items-center justify-center gap-4 mb-8">
             <span className="text-sm text-muted-foreground font-medium">Теги:</span>
             
             <div className="flex gap-3">
